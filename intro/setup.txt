@@ -1,0 +1,15 @@
+
+
+1.- Setup Python environment. Add this line to ~/.bashrc
+
+export PATH="/g/data/oe9/software/miniconda3/bin:$PATH"
+
+
+2.- Join the following NCI projects. Request access at https://my.nci.org.au/mancini
+
+rs0 rr3 oi10 fx3 gb6 rr5 u39 rr2
+
+
+3.- Clone the course repository. https://github.com/ANU-WALD/acawsi
+
+git clone https://github.com/ANU-WALD/acawsi.git

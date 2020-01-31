@@ -1,0 +1,10 @@
+#!/bin/bash
+#PBS -P oe9
+#PBS -q express
+#PBS -l ncpus=1
+#PBS -l mem=1GB
+#PBS -l walltime=00:30:00
+#PBS -l storage=gdata/oe9
+
+cd /home/603/ab1234/acawsi/intro
+/g/data/oe9/software/miniconda3/bin/python compute.py
