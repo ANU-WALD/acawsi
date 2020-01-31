@@ -9,7 +9,6 @@ export PATH="/g/data/oe9/software/miniconda3/bin:$PATH"
 
 rs0 rr3 oi10 fx3 gb6 rr5 u39 rr2
 
+3.- Create an account on the Geoscience Australia DEA Sandbox environemnt:
 
-3.- Clone the course repository. https://github.com/ANU-WALD/acawsi
-
-git clone https://github.com/ANU-WALD/acawsi.git
+https://app.sandbox.dea.ga.gov.au
