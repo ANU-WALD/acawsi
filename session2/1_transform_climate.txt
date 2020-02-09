@@ -1,0 +1,28 @@
+ERA-5 hourly global precipitation data:
+/g/data/oe9/user/data/precip_201806.nc out1.nc
+
+We want to extract the area of Canberra for this date:
+02-06-2018 05:00:00 (UTC) 
+
+1.- Extract this temporal step:
+cdo -b F32 seltimestep,? /g/data/oe9/user/data/precip_201806.nc out1.nc
+
+2.- Select the variable containing total precipitation (tp):
+cdo selvar,? out1.nc out2.nc
+
+3.- Get coordinates for Canberra and transform into Albers Equal Area CRS:
+```
+from pyproj import Proj, transform                                                 
+
+inProj = Proj('epsg:????')                                                         
+outProj = Proj('epsg:????')                                                        
+lat, lon = ????, ?????                                                      
+x,y = transform(inProj,outProj,lat,lon)                                           
+x,y
+```
+
+4.- Reproject raster into Albers equal area for the selected window at a resolution of 500 metres:
+
+gdalwarp -of netCDF -r bilinear -co WRITE_BOTTOMUP=NO -s_srs EPSG:**** -t_srs EPSG:**** -te xmin ymin xmax ymax -tr r_x r_y out1.nc out2.nc
+
+5.- Transform into a PNG with gdal_translate
